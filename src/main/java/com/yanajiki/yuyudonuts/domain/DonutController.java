@@ -1,20 +1,29 @@
 package com.yanajiki.yuyudonuts.domain;
 
+import org.apache.logging.log4j.util.Strings;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
 @Controller
 public class DonutController {
+    private Logger log = LoggerFactory.getLogger(DonutController.class);
+
+    private final int DONUT_PER_PACKAGE = 4;
+
     @GetMapping("/")
     public String home(Model model) {
         List<DonutPackage> packages = List.of(
-                new DonutPackage("4 unidades", "R$ 6,00 Sem Recheio \n R$ 9,00 Com Recheio", "/images/4-donuts.jpg", 4),
-                new DonutPackage("8 unidades", "R$ 8,00 Sem Recheio \n R$13,00 Com Recheio", "/images/8-donuts.jpg", 8),
-                new DonutPackage("16 unidades", "R$12,00 Sem Recheio \n R$15,00 Com Recheio", "/images/16-donuts.jpg", 16),
-                new DonutPackage("20 unidades", "R$22,00 Sem Recheio \n R$25,00 Com Recheio", "/images/20-donuts.jpg", 20)
+                new DonutPackage(1L, "Sem recheio", "● Até 4 pacotes: R$ 6,00 por pacote. \n● De 5 a 8 pacotes: R$ 5,75 por pacote.\n● De 9 a 16 pacotes: R$ 5,50 por pacote.\n● A partir de 17 pacotes: R$ 5,25 por pacote.", "/images/4-donuts.jpg", 4),
+                new DonutPackage(2L, "Com recheio", "● Até 4 pacotes: R$ 8,00 por pacote. \n● De 5 a 8 pacotes: R$ 7,75 por pacote.\n● De 9 a 16 pacotes: R$ 7,50 por pacote.\n● A partir de 17 pacotes: R$ 7,25 por pacote.", "/images/8-donuts.jpg", 8),
+                new DonutPackage(3L, "Personalizado", "● Até 4 pacotes: R$ 10,00 por pacote. \n● De 5 a 8 pacotes: R$ 9,50 por pacote.\n● De 9 a 16 pacotes: R$ 9,00 por pacote.\n● A partir de 17 pacotes: R$ 8,50 por pacote.", "/images/16-donuts.jpg", 16),
+                new DonutPackage(4L, "Especial de natal", "● Até 4 pacotes: R$ 9,00 por pacote. \n● De 5 a 8 pacotes: R$ 8,75 por pacote.\n● De 9 a 16 pacotes: R$ 8,50 por pacote.\n● A partir de 17 pacotes: R$ 8,25 por pacote.", "/images/20-donuts.jpg", 20)
         );
         model.addAttribute("logoImage", "/images/logo.jpg");
         model.addAttribute("mascotImage", "/images/mascot.jpg");
@@ -36,5 +45,34 @@ public class DonutController {
         model.addAttribute("logoImage", "/images/logo.jpg");
         model.addAttribute("mascotImage", "/images/mascot.jpg");
         return "4-donuts";
+    }
+
+    @GetMapping("/packageId/{packageId}")
+    public String nonStuffed(Model model, @RequestParam String packageAmount, @PathVariable Long packageId) {
+        List<Donut> donuts = List.of(
+                new Donut("Glazed Donut", "glazed_donut", "A classic favorite", "/images/donuts1.jpg", false),
+                new Donut("Chocolate Donut", "chocolate_donut", "Rich chocolate glaze", "/images/donuts2.jpg", false),
+                new Donut("Sprinkle Donut", "sprinkle_donut", "Colorful sprinkles", "/images/donuts3.jpg", false),
+                new Donut("Donut 4", "donut_4","Furei com a pica", "/images/donuts3.jpg", false)
+
+        );
+
+        model.addAttribute("logoImage", "/images/logo.jpg");
+        model.addAttribute("mascotImage", "/images/mascot.jpg");
+
+        try {
+            if (Strings.isBlank(packageAmount)) return "redirect:/";
+
+            int parsedPackageAmount = Integer.parseInt(packageAmount);
+
+            var pageVariables = new DonutSelectionPageVariables(1L, parsedPackageAmount, "Sem Recheio", parsedPackageAmount * DONUT_PER_PACKAGE, donuts);
+
+            model.addAttribute("pageVariables", pageVariables);
+
+            return parsedPackageAmount > 0 ? "donut-selection" : "redirect:/";
+        } catch (Exception e) {
+            log.error("Not a valid packageAmunt");
+            return "redirect:/";
+        }
     }
 }
