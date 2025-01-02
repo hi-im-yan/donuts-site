@@ -19,7 +19,7 @@ public class DonutController {
         model.addAttribute("logoImage", "/images/logo.jpg");
         model.addAttribute("mascotImage", "/images/mascot.jpg");
         model.addAttribute("packages", packages);
-        return "home";
+        return "Home";
     }
 
     @GetMapping("/4-donuts")
