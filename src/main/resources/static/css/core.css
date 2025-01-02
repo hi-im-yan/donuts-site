@@ -38,3 +38,22 @@ body {
     max-width: 300px;
     margin-bottom: 20px;
 }
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    margin: 0 8px;
+}
+
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.quantity-label {
+    color: #6c757d;
+    font-size: 0.9rem;
+}

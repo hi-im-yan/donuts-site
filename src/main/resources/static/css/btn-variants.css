@@ -1,0 +1,392 @@
+/* Pink shades (Filled buttons) */
+.btn-pink-100 {
+    background-color: #f8d7e8;
+    color: white;
+    border-color: #f8d7e8;
+}
+
+.btn-pink-100:hover {
+    background-color: #f3c4db;
+    border-color: #f3c4db;
+}
+
+.btn-pink-200 {
+    background-color: #f1b1d2;
+    color: white;
+    border-color: #f1b1d2;
+}
+
+.btn-pink-200:hover {
+    background-color: #eda1c4;
+    border-color: #eda1c4;
+}
+
+.btn-pink-300 {
+    background-color: #e97db8;
+    color: white;
+    border-color: #e97db8;
+}
+
+.btn-pink-300:hover {
+    background-color: #e56ca9;
+    border-color: #e56ca9;
+}
+
+.btn-pink-400 {
+    background-color: #d63384;
+    color: white;
+    border-color: #d63384;
+}
+
+.btn-pink-400:hover {
+    background-color: #c42e79;
+    border-color: #c42e79;
+}
+
+.btn-pink-500 {
+    background-color: #ba2871;
+    color: white;
+    border-color: #ba2871;
+}
+
+.btn-pink-500:hover {
+    background-color: #a62465;
+    border-color: #a62465;
+}
+
+.btn-pink-600 {
+    background-color: #a0205f;
+    color: white;
+    border-color: #a0205f;
+}
+
+.btn-pink-600:hover {
+    background-color: #8c1c54;
+    border-color: #8c1c54;
+}
+
+.btn-pink-700 {
+    background-color: #87194f;
+    color: white;
+    border-color: #87194f;
+}
+
+.btn-pink-700:hover {
+    background-color: #761543;
+    border-color: #761543;
+}
+
+.btn-pink-800 {
+    background-color: #68123c;
+    color: white;
+    border-color: #68123c;
+}
+
+.btn-pink-800:hover {
+    background-color: #5a0e33;
+    border-color: #5a0e33;
+}
+
+.btn-pink-900 {
+    background-color: #540c31;
+    color: white;
+    border-color: #540c31;
+}
+
+.btn-pink-900:hover {
+    background-color: #470a2b;
+    border-color: #470a2b;
+}
+
+/* Pink shades (Outline buttons) */
+.btn-outline-pink-100 {
+    background-color: transparent;
+    color: #f8d7e8;
+    border-color: #f8d7e8;
+}
+
+.btn-outline-pink-100:hover {
+    background-color: #f8d7e8;
+    color: white;
+}
+
+.btn-outline-pink-200 {
+    background-color: transparent;
+    color: #f1b1d2;
+    border-color: #f1b1d2;
+}
+
+.btn-outline-pink-200:hover {
+    background-color: #f1b1d2;
+    color: white;
+}
+
+.btn-outline-pink-300 {
+    background-color: transparent;
+    color: #e97db8;
+    border-color: #e97db8;
+}
+
+.btn-outline-pink-300:hover {
+    background-color: #e97db8;
+    color: white;
+}
+
+.btn-outline-pink-400 {
+    background-color: transparent;
+    color: #d63384;
+    border-color: #d63384;
+}
+
+.btn-outline-pink-400:hover {
+    background-color: #d63384;
+    color: white;
+}
+
+.btn-outline-pink-500 {
+    background-color: transparent;
+    color: #ba2871;
+    border-color: #ba2871;
+}
+
+.btn-outline-pink-500:hover {
+    background-color: #ba2871;
+    color: white;
+}
+
+.btn-outline-pink-600 {
+    background-color: transparent;
+    color: #a0205f;
+    border-color: #a0205f;
+}
+
+.btn-outline-pink-600:hover {
+    background-color: #a0205f;
+    color: white;
+}
+
+.btn-outline-pink-700 {
+    background-color: transparent;
+    color: #87194f;
+    border-color: #87194f;
+}
+
+.btn-outline-pink-700:hover {
+    background-color: #87194f;
+    color: white;
+}
+
+.btn-outline-pink-800 {
+    background-color: transparent;
+    color: #68123c;
+    border-color: #68123c;
+}
+
+.btn-outline-pink-800:hover {
+    background-color: #68123c;
+    color: white;
+}
+
+.btn-outline-pink-900 {
+    background-color: transparent;
+    color: #540c31;
+    border-color: #540c31;
+}
+
+.btn-outline-pink-900:hover {
+    background-color: #540c31;
+    color: white;
+}
+
+/* Purple shades (Filled buttons) */
+.btn-purple-100 {
+    background-color: #e9d7f3;
+    color: white;
+    border-color: #e9d7f3;
+}
+
+.btn-purple-100:hover {
+    background-color: #d9c4eb;
+    border-color: #d9c4eb;
+}
+
+.btn-purple-200 {
+    background-color: #d3b0e7;
+    color: white;
+    border-color: #d3b0e7;
+}
+
+.btn-purple-200:hover {
+    background-color: #c59de1;
+    border-color: #c59de1;
+}
+
+.btn-purple-300 {
+    background-color: #bc86da;
+    color: white;
+    border-color: #bc86da;
+}
+
+.btn-purple-300:hover {
+    background-color: #ad73d3;
+    border-color: #ad73d3;
+}
+
+.btn-purple-400 {
+    background-color: #a55ccd;
+    color: white;
+    border-color: #a55ccd;
+}
+
+.btn-purple-400:hover {
+    background-color: #934dc0;
+    border-color: #934dc0;
+}
+
+.btn-purple-500 {
+    background-color: #8843ba;
+    color: white;
+    border-color: #8843ba;
+}
+
+.btn-purple-500:hover {
+    background-color: #7838a5;
+    border-color: #7838a5;
+}
+
+.btn-purple-600 {
+    background-color: #73389e;
+    color: white;
+    border-color: #73389e;
+}
+
+.btn-purple-600:hover {
+    background-color: #633087;
+    border-color: #633087;
+}
+
+.btn-purple-700 {
+    background-color: #662a85;
+    color: white;
+    border-color: #662a85;
+}
+
+.btn-purple-700:hover {
+    background-color: #572470;
+    border-color: #572470;
+}
+
+.btn-purple-800 {
+    background-color: #542464;
+    color: white;
+    border-color: #542464;
+}
+
+.btn-purple-800:hover {
+    background-color: #472058;
+    border-color: #472058;
+}
+
+.btn-purple-900 {
+    background-color: #4b1d53;
+    color: white;
+    border-color: #4b1d53;
+}
+
+.btn-purple-900:hover {
+    background-color: #3d1946;
+    border-color: #3d1946;
+}
+
+/* Purple shades (Outline buttons) */
+.btn-outline-purple-100 {
+    background-color: transparent;
+    color: #e9d7f3;
+    border-color: #e9d7f3;
+}
+
+.btn-outline-purple-100:hover {
+    background-color: #e9d7f3;
+    color: white;
+}
+
+.btn-outline-purple-200 {
+    background-color: transparent;
+    color: #d3b0e7;
+    border-color: #d3b0e7;
+}
+
+.btn-outline-purple-200:hover {
+    background-color: #d3b0e7;
+    color: white;
+}
+
+.btn-outline-purple-300 {
+    background-color: transparent;
+    color: #bc86da;
+    border-color: #bc86da;
+}
+
+.btn-outline-purple-300:hover {
+    background-color: #bc86da;
+    color: white;
+}
+
+.btn-outline-purple-400 {
+    background-color: transparent;
+    color: #a55ccd;
+    border-color: #a55ccd;
+}
+
+.btn-outline-purple-400:hover {
+    background-color: #a55ccd;
+    color: white;
+}
+
+.btn-outline-purple-500 {
+    background-color: transparent;
+    color: #8843ba;
+    border-color: #8843ba;
+}
+
+.btn-outline-purple-500:hover {
+    background-color: #8843ba;
+    color: white;
+}
+
+.btn-outline-purple-600 {
+    background-color: transparent;
+    color: #73389e;
+    border-color: #73389e;
+}
+
+.btn-outline-purple-600:hover {
+    background-color: #73389e;
+    color: white;
+}
+
+.btn-outline-purple-700 {
+    background-color: transparent;
+    color: #662a85;
+    border-color: #662a85;
+}
+
+.btn-outline-purple-700:hover {
+    background-color: #662a85;
+    color: white;
+}
+
+.btn-outline-purple-800 {
+    background-color: transparent;
+    color: #542464;
+    border-color: #542464;
+}
+
+.btn-outline-purple-800:hover {
+    background-color: #542464;
+    color: white;
+}
+
+.btn-outline-purple-900 {
+    background-color: transparent;
+    color:
