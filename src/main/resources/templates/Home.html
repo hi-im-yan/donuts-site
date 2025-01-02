@@ -45,7 +45,7 @@
                         <div class="card-body">
                             <h5 class="card-title" th:text="${package.title}"></h5>
                             <p class="card-text" th:text="${package.description}"></p>
-                            <a href="#" class="btn btn-primary">Monte a sua escolha!</a>
+                            <a th:href="@{/{id}-donuts(id=${package.quantity})}" class="btn btn-primary">Monte a sua escolha!</a>
                         </div>
                     </div>
                 </div>
