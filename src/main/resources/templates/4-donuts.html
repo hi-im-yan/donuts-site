@@ -24,7 +24,9 @@
 
         <!-- Sidebar -->
         <div class="col-md-3">
-            <img th:src="${logoImage}" alt="Logo" class="logo">
+            <a th:href="@{/}">
+                <img th:src="${logoImage}" alt="Logo" class="logo">
+            </a>
             <nav class="sidebar-nav">
                 <div class="nav flex-column">
                     <a class="nav-link" href="#">Encomendas</a>

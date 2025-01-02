@@ -23,7 +23,9 @@
 
         <!-- Sidebar -->
         <div class="col-md-3">
-            <img th:src="${logoImage}" alt="Logo" class="logo">
+            <a th:href="@{/}">
+                <img th:src="${logoImage}" alt="Logo" class="logo">
+            </a>
             <nav class="sidebar-nav">
                 <div class="nav flex-column">
                     <a class="nav-link" href="#">Encomendas</a>
@@ -45,7 +47,8 @@
                         <div class="card-body">
                             <h5 class="card-title" th:text="${package.title}"></h5>
                             <p class="card-text" th:text="${package.description}"></p>
-                            <a th:href="@{/{id}-donuts(id=${package.quantity})}" class="btn btn-primary">Monte a sua escolha!</a>
+                            <a th:href="@{/{id}-donuts(id=${package.quantity})}" class="btn btn-primary">Monte a sua
+                                escolha!</a>
                         </div>
                     </div>
                 </div>
