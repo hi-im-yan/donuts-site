@@ -46,7 +46,7 @@
     </div>
 </div>
 
-<script th:inline="javascript">
+<script>
     function updateQuantity(id, change) {
         const input = document.getElementById(`package_id-${id}`);
         const currentValue = parseInt(input.value);
@@ -87,13 +87,6 @@
         confirmButton.classList.add('btn-pink-100');
         confirmButton.style.pointerEvents = 'none';
     }
-
-
-
-
-
-
-
 
 </script>
 
