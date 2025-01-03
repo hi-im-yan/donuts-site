@@ -1,5 +1,7 @@
-package com.yanajiki.yuyudonuts.domain;
+package com.yanajiki.yuyudonuts.domain.controller.api;
 
+import com.yanajiki.yuyudonuts.domain.model.Donut;
+import com.yanajiki.yuyudonuts.domain.repository.DonutRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

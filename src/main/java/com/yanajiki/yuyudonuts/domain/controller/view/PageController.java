@@ -1,5 +1,10 @@
-package com.yanajiki.yuyudonuts.domain;
+package com.yanajiki.yuyudonuts.domain.controller.view;
 
+import com.yanajiki.yuyudonuts.domain.model.Donut;
+import com.yanajiki.yuyudonuts.domain.model.DonutPackage;
+import com.yanajiki.yuyudonuts.domain.model.DonutSelectionPageVariables;
+import com.yanajiki.yuyudonuts.domain.repository.DonutPackageRepository;
+import com.yanajiki.yuyudonuts.domain.repository.DonutRepository;
 import org.apache.logging.log4j.util.Strings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

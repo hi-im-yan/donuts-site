@@ -1,5 +1,6 @@
-package com.yanajiki.yuyudonuts.domain;
+package com.yanajiki.yuyudonuts.domain.repository;
 
+import com.yanajiki.yuyudonuts.domain.model.DonutPackage;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
