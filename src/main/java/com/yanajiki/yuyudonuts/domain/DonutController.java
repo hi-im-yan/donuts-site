@@ -31,29 +31,13 @@ public class DonutController {
         return "Home";
     }
 
-    @GetMapping("/4-donuts")
-    public String fourDonuts(Model model) {
-        List<Donut> donuts = List.of(
-                new Donut("Glazed Donut", "glazed_donut", "A classic favorite", "/images/donuts1.jpg", false),
-                new Donut("Chocolate Donut", "chocolate_donut", "Rich chocolate glaze", "/images/donuts2.jpg", false),
-                new Donut("Sprinkle Donut", "sprinkle_donut", "Colorful sprinkles", "/images/donuts3.jpg", false),
-                new Donut("Donut 4", "donut_4","Furei com a pica", "/images/donuts3.jpg", false)
-
-        );
-
-        model.addAttribute("donuts", donuts);
-        model.addAttribute("logoImage", "/images/logo.jpg");
-        model.addAttribute("mascotImage", "/images/mascot.jpg");
-        return "4-donuts";
-    }
-
     @GetMapping("/packageId/{packageId}")
     public String nonStuffed(Model model, @RequestParam String packageAmount, @PathVariable Long packageId) {
         List<Donut> donuts = List.of(
-                new Donut("Confete", "confete", "Chocolate com confete", "/images/chocolate-confete.jpg", false),
-                new Donut("Chocoball", "chocoball", "Chocolate branco com chocoball", "/images/chocoball.jpg", false),
-                new Donut("Granulé", "granule", "Chocolate com granulé", "/images/granule.jpg", false),
-                new Donut("O Homer", "homer","Inspirado em Os Simpsons", "/images/homer.jpg", false)
+                new Donut(1L, "Confete", "confete", "Chocolate com confete", "/images/chocolate-confete.jpg", false),
+                new Donut(2L, "Chocoball", "chocoball", "Chocolate branco com chocoball", "/images/chocoball.jpg", false),
+                new Donut(3L, "Granulé", "granule", "Chocolate com granulé", "/images/granule.jpg", false),
+                new Donut(4L, "O Homer", "homer","Inspirado em Os Simpsons", "/images/homer.jpg", false)
 
         );
 

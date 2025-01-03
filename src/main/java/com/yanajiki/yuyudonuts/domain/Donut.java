@@ -1,18 +1,34 @@
 package com.yanajiki.yuyudonuts.domain;
 
 public class Donut {
-    private String name;
-    private String uniqueName;
-    private String description;
-    private String imageUrl;
-    private boolean isStuffed;
+    private final Long id;
+    private final String name;
+    private final String uniqueName;
+    private final String description;
+    private final String imageUrl;
+    private final boolean isStuffed;
 
-    public Donut(String name, String uniqueName, String description, String imageUrl, boolean isStuffed) {
+    public Donut(Long id, String name, String uniqueName, String description, String imageUrl, boolean isStuffed) {
+        this.id = id;
         this.name = name;
         this.uniqueName = uniqueName;
         this.description = description;
         this.imageUrl = imageUrl;
         this.isStuffed = isStuffed;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getName() {

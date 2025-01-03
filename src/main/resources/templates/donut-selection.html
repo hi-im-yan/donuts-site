@@ -29,13 +29,13 @@
                             <p class="card-text" th:text="${donut.description}"></p>
                             <div class="d-flex align-items-center">
                                 <button class="btn btn-outline-purple-400"
-                                        th:onclick="updateQuantity([[${donut.uniqueName}]], -1)">-
+                                        th:onclick="updateQuantity([[${donut.id}]], -1)">-
                                 </button>
-                                <input type="number" th:id="'donut_id-' + ${donut.uniqueName}"
+                                <input type="number" th:id="'donut_id-' + ${donut.id}"
                                        class="quantity-input mx-2 form-control" value="0" min="0"
                                        th:max="${pageVariables.amountOfDonutsToChoose}" readonly>
                                 <button class="btn btn-outline-pink-400"
-                                        th:onclick="updateQuantity([[${donut.uniqueName}]], 1)">+
+                                        th:onclick="updateQuantity([[${donut.id}]], 1)">+
                                 </button>
                             </div>
                         </div>
@@ -47,6 +47,20 @@
 
             <!-- Thank You Section -->
             <div th:replace="~{fragments/footer :: footer}"/>
+
+            <div class="toast-container position-fixed top-0 end-0 p-3">
+                <div id="cartToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            Donuts adicionados ao carrinho!
+                            <br><br>
+                            Redirecionando para a página principal...
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+
 
             <input type="hidden" id="packageId" th:value="${pageVariables.packageId}">
             <input type="hidden" id="packageAmount" th:value="${pageVariables.packageAmount}">
@@ -111,6 +125,9 @@
         confirmButton.classList.remove('btn-pink-100');
         confirmButton.classList.add('btn-pink-400');
         confirmButton.style.pointerEvents = 'auto';
+        confirmButton.onclick = () => {
+            addToCart();
+        };
     }
 
     function disableConfirmButton() {
@@ -119,9 +136,41 @@
         confirmButton.classList.remove('btn-pink-400');
         confirmButton.classList.add('btn-pink-100');
         confirmButton.style.pointerEvents = 'none';
+        confirmButton.onclick = null;
     }
 
+    function addToCart() {
+        const donuts = [];
+        const inputs = document.querySelectorAll('.quantity-input');
+        inputs.forEach(input => {
+            const id = input.id.split('-')[1];
+            console.log(id);
+            const amount = parseInt(input.value);
+            if (amount > 0) {
+                donuts.push({"id": id, "amount": amount});
+            }
+        });
 
+        const data = {
+            "packageId": pageVariables.packageId,
+            "packageAmount": pageVariables.packageAmount,
+            "packageName": pageVariables.packageName,
+            "donuts": donuts
+        }
+
+        localStorage.setItem("cart", JSON.stringify(data));
+        showCartToast();
+
+        setTimeout(() => {
+            window.location.href = "/";
+        }, 4000);
+    }
+
+    function showCartToast() {
+        const toastElement = document.getElementById('cartToast');
+        const toast = new bootstrap.Toast(toastElement);
+        toast.show();
+    }
 
 </script>
 
