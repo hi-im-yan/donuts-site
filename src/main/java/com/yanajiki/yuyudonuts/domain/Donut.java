@@ -7,14 +7,16 @@ public class Donut {
     private final String description;
     private final String imageUrl;
     private final boolean isStuffed;
+    private final Long packageId;
 
-    public Donut(Long id, String name, String uniqueName, String description, String imageUrl, boolean isStuffed) {
+    public Donut(Long id, String name, String uniqueName, String description, String imageUrl, boolean isStuffed, Long packageId) {
         this.id = id;
         this.name = name;
         this.uniqueName = uniqueName;
         this.description = description;
         this.imageUrl = imageUrl;
         this.isStuffed = isStuffed;
+        this.packageId = packageId;
     }
 
     @Override
@@ -49,6 +51,10 @@ public class Donut {
 
     public boolean getIsStuffed() {
         return isStuffed;
+    }
+
+    public Long getPackageId() {
+        return packageId;
     }
 }
 

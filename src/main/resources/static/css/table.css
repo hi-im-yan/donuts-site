@@ -1,0 +1,26 @@
+.table > :not(caption) > * > * {
+    padding: 1rem 0.75rem;
+}
+
+.input-group .btn {
+    border-color: #ff69b4;
+    color: #ff69b4;
+}
+
+.input-group .btn:hover {
+    background-color: #ff69b4;
+    color: white;
+}
+
+.input-group .form-control {
+    border-color: #ff69b4;
+}
+
+.input-group .form-control:focus {
+    border-color: #ff69b4;
+    box-shadow: 0 0 0 0.25rem rgba(255, 105, 180, 0.25);
+}
+
+.table-hover tbody tr:hover {
+    background-color: #fff0f5;
+}

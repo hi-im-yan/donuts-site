@@ -55,6 +55,8 @@
                             Donuts adicionados ao carrinho!
                             <br><br>
                             Redirecionando para a página principal...
+                            <div class="spinner-border text-light" role="status">
+                            </div>
                         </div>
                         <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                     </div>
@@ -139,32 +141,41 @@
         confirmButton.onclick = null;
     }
 
-    function addToCart() {
-        const donuts = [];
-        const inputs = document.querySelectorAll('.quantity-input');
-        inputs.forEach(input => {
-            const id = input.id.split('-')[1];
-            console.log(id);
-            const amount = parseInt(input.value);
-            if (amount > 0) {
-                donuts.push({"id": id, "amount": amount});
-            }
-        });
-
-        const data = {
-            "packageId": pageVariables.packageId,
-            "packageAmount": pageVariables.packageAmount,
-            "packageName": pageVariables.packageName,
-            "donuts": donuts
+function addToCart() {
+    const donuts = [];
+    const inputs = document.querySelectorAll('.quantity-input');
+    inputs.forEach(input => {
+        const id = input.id.split('-')[1];
+        console.log(id);
+        const amount = parseInt(input.value);
+        if (amount > 0) {
+            donuts.push({"id": id, "amount": amount});
         }
+    });
 
-        localStorage.setItem("cart", JSON.stringify(data));
-        showCartToast();
+    const newPackage = {
+        "packageId": pageVariables.packageId,
+        "packageAmount": pageVariables.packageAmount,
+        "packageName": pageVariables.packageName,
+        "donuts": donuts
+    };
 
-        setTimeout(() => {
-            window.location.href = "/";
-        }, 4000);
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const packageIndex = cart.findIndex(pkg => pkg.packageId === newPackage.packageId);
+
+    if (packageIndex > -1) {
+        cart[packageIndex] = newPackage;
+    } else {
+        cart.push(newPackage);
     }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    showCartToast();
+
+    setTimeout(() => {
+        window.location.href = "/";
+    }, 4000);
+}
 
     function showCartToast() {
         const toastElement = document.getElementById('cartToast');
