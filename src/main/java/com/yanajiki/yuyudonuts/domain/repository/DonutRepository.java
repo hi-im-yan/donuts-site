@@ -1,6 +1,7 @@
 package com.yanajiki.yuyudonuts.domain.repository;
 
 import com.yanajiki.yuyudonuts.domain.model.Donut;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -8,16 +9,21 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@Slf4j
 public class DonutRepository {
-
-    Logger log = LoggerFactory.getLogger(DonutRepository.class);
 
     public DonutRepository() {
     }
 
     public Donut getDonutById(Long id) {
         log.info("Getting donut by id: " + id);
-        return getAllDonuts().stream().filter(donut -> donut.getId().equals(id)).findFirst().orElse(null);
+        Donut foundDonut = getAllDonuts().stream().filter(donut -> donut.getId().equals(id)).findFirst().orElse(null);
+        if (foundDonut != null) {
+            log.info("Donut found for id '{}': '{}'", id, foundDonut);
+            return foundDonut;
+        }
+        log.info("Donut not found for id '{}'", id);
+        return null;
     }
 
     public List<Donut> getAllDonuts() {
