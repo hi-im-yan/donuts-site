@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/billing")
@@ -39,8 +40,17 @@ public class BillingController {
             List<Donut> donuts = getDonutsFullInfo(packageRequest.getDonuts());
             PackageValue packageValue = applyForDiscount(packageRequest);
             // setting a list of chosen donuts with their quantity just trust this crazy line... to lazy to refactor
-            packageValue.setDonuts(DonutsInPackageResponse.fromDonutsAndQuantity(donuts, packageRequest.getDonuts().stream().filter(donut -> donut.getDonutId() != null).mapToInt(DonutsInPackageRequest::getQuantity).sum()));
 
+            List<DonutsInPackageResponse> donutsResponse = donuts.stream().map(donut -> {
+                for (var donutInPackage : packageRequest.getDonuts()) {
+                    if (donutInPackage.getDonutId().equals(donut.getId())) {
+                        return DonutsInPackageResponse.fromDonutsAndQuantity(donut, donutInPackage.getQuantity());
+                    }
+                }
+                return null;
+            }).collect(Collectors.toList());
+            
+            packageValue.setDonuts(donutsResponse);
             packageValues.add(packageValue);
         }
         log.info("Calculated cart value: '{}'", packageValues);

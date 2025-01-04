@@ -3,6 +3,10 @@ function updateQuantity(id, change) {
     const currentValue = parseInt(input.value);
     const newValue = currentValue + parseInt(change);
 
+    if (newValue < 0) {
+        return;
+    }
+
     input.value = newValue;
 
     const link = document.getElementById(`link-${id}`);

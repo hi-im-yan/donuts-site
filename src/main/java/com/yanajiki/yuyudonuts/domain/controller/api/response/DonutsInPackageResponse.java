@@ -21,7 +21,7 @@ public class DonutsInPackageResponse {
         this.quantity = quantity;
     }
 
-    public static List<DonutsInPackageResponse> fromDonutsAndQuantity(List<Donut> donuts, int quantity) {
-        return donuts.stream().map(donut -> new DonutsInPackageResponse(donut, quantity)).toList();
+    public static DonutsInPackageResponse fromDonutsAndQuantity(Donut donut, int quantity) {
+        return new DonutsInPackageResponse(donut, quantity);
     }
 }

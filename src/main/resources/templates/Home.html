@@ -22,7 +22,7 @@
                                         th:onclick="updateQuantity([[${package.id}]], -1)">-
                                 </button>
                                 <input type="number" th:id="'package_id-' + ${package.id}"
-                                       class="quantity-input mx-2 form-control" value="0" readonly>
+                                       class="quantity-input mx-2 form-control" value="0" min="0" readonly>
                                 <button class="btn btn-outline-pink-400"
                                         th:onclick="updateQuantity([[${package.id}]], 1)">+
                                 </button>
