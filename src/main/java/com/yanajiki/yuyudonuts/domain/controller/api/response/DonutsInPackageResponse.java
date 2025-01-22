@@ -2,10 +2,12 @@ package com.yanajiki.yuyudonuts.domain.controller.api.response;
 
 import com.yanajiki.yuyudonuts.domain.model.Donut;
 import lombok.Getter;
+import lombok.ToString;
 
 import java.util.List;
 
 @Getter
+@ToString
 public class DonutsInPackageResponse {
     private final Long id;
     private final String title;

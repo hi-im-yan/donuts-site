@@ -75,6 +75,13 @@ public class PageController {
         return "cart";
     }
 
+    @GetMapping("/whatsapp")
+    public String whatsapp(Model model) {
+        model.addAttribute("logoImage", "/images/logo.jpg");
+        model.addAttribute("mascotImage", "/images/mascot.jpg");
+        return "orderRedirect";
+    }
+
     private List<Donut> getDonutsOptionsByPackageId(Long packageId) {
         List<Donut> donuts = donutRepository.getAllDonuts();
 

@@ -1,5 +1,17 @@
+function shouldDisplayOrderAndEmptyCartButtons(shouldDisplay) {
+    document.getElementById('order-button').style.display = shouldDisplay ? '' : 'none';
+    document.getElementById('empty-cart-button').style.display = shouldDisplay ? '' : 'none';
+}
+
+
+
 document.addEventListener('DOMContentLoaded', async () => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    cart.length === 0
+        ? shouldDisplayOrderAndEmptyCartButtons(false)
+        : shouldDisplayOrderAndEmptyCartButtons(true)
+
 
     let apiResponse = {};
     try {
@@ -78,4 +90,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         });
     });
+});
+
+document.getElementById('empty-cart-button').addEventListener('click', () => {
+    localStorage.removeItem('cart');
+    location.reload();
 });

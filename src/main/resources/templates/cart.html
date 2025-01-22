@@ -10,11 +10,14 @@
         <!-- Main Content -->
         <div class="col-md-9">
             <div class="container my-4">
-                <h3 class="mb-4" style="color: #ff69b4;">Detalhes do Carrinho</h3>
+                <h3 class="mb-4" style="color: #ff69b4;">Detalhes do Carrinho
+                    <button class="btn btn-outline-purple-400" id="empty-cart-button">Esvaziar Carrinho <i
+                            class="bi bi-trash-fill"></i></button>
+                </h3>
                 <div id="cart-tables"></div>
                 <!-- Seção do Preço Total -->
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body d-flex">
                         <table class="table mb-0">
                             <tfoot>
                             <tr>
@@ -23,17 +26,18 @@
                             </tr>
                             </tfoot>
                         </table>
+                        <a href="/whatsapp">
+                            <button class="btn btn-outline-pink-400" id="order-button" href>Encomendar! <i
+                                    class="bi bi-bag-check-fill"></i></button>
+                        </a>
                     </div>
                 </div>
             </div>
-            </div>
-
-
-            <!-- Thank You Section -->
-            <div th:replace="~{fragments/footer :: footer}"/>
 
         </div>
+
     </div>
+</div>
 </div>
 
 <script src="/js/cartPage.js"></script>
