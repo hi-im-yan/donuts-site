@@ -57,3 +57,14 @@ body {
     color: #6c757d;
     font-size: 0.9rem;
 }
+
+.carousel-item {
+    background-color: #f1b1d2;
+    color: white;
+    border-radius: 15px;
+}
+
+.carousel-item:hover {
+    background-color: #eda1c4;
+    border-color: #eda1c4;
+}

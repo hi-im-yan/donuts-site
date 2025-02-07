@@ -82,6 +82,17 @@ public class PageController {
         return "orderRedirect";
     }
 
+    @GetMapping("/donut-menu")
+    public String donutMenu(Model model) {
+        var allDonuts = donutRepository.getAllDonuts();
+        model.addAttribute("logoImage", "/images/logo.jpg");
+        model.addAttribute("mascotImage", "/images/mascot.jpg");
+        model.addAttribute("allNonStuffedDonuts", allDonuts.stream().filter(donut -> !donut.isStuffed()).toList());
+        model.addAttribute("allStuffedDonuts", allDonuts.stream().filter(donut -> donut.isStuffed()).toList());
+
+        return "donut-menu";
+    }
+
     private List<Donut> getDonutsOptionsByPackageId(Long packageId) {
         List<Donut> donuts = donutRepository.getAllDonuts();
 

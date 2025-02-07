@@ -2,8 +2,6 @@ package com.yanajiki.yuyudonuts.domain.repository;
 
 import com.yanajiki.yuyudonuts.domain.model.Donut;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,10 +30,10 @@ public class DonutRepository {
                 new Donut(2L, "Chocoball", "chocoball", "Chocolate branco com chocoball", "/images/chocoball.jpg", false, 1L),
                 new Donut(3L, "Granulé", "granule", "Chocolate com granulé", "/images/granule.jpg", false, 1L),
                 new Donut(4L, "O Homer", "homer", "Inspirado em Os Simpsons", "/images/homer.jpg", false, 1L),
-                new Donut(5L, "Confete Recheado", "confete", "Chocolate com confete", "/images/chocolate-confete.jpg", false, 2L),
-                new Donut(6L, "Chocoball Recheado", "chocoball", "Chocolate branco com chocoball", "/images/chocoball.jpg", false, 2L),
-                new Donut(7L, "Granulé Recheado", "granule", "Chocolate com granulé", "/images/granule.jpg", false, 2L),
-                new Donut(8L, "O Homer Recheado", "homer", "Inspirado em Os Simpsons", "/images/homer.jpg", false, 2L)
+                new Donut(5L, "Confete Recheado", "confete", "Chocolate com confete", "/images/chocolate-confete.jpg", true, 2L),
+                new Donut(6L, "Chocoball Recheado", "chocoball", "Chocolate branco com chocoball", "/images/chocoball.jpg", true, 2L),
+                new Donut(7L, "Granulé Recheado", "granule", "Chocolate com granulé", "/images/granule.jpg", true, 2L),
+                new Donut(8L, "O Homer Recheado", "homer", "Inspirado em Os Simpsons", "/images/homer.jpg", true, 2L)
         );
     }
 }
