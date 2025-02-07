@@ -22,7 +22,7 @@ jobs:
         run: mvn clean package
 
       - name: UPLOAD BUILD ARTIFACT
-        uses: actions/upload-artifact@v3.1.0
+        uses: actions/upload-artifact@v4
         with:
           name: yuyudonuts-${{ github.run_number }}
 #          path: target/github-actions-*.jar
